@@ -6,10 +6,20 @@ $(function () {
 //    const 有块级作用域 不可再次赋值 声明要赋值
 // 选择链接
     let $navs = $(".J-good-list li");
+    var flag = true;
 
-    $navs.on("click",function () {
-        let that = $(this);
-        that.addClass("good-active").siblings("").removeClass("good-active")
+    $navs.on("click", function () {
+        if (flag) {
+            flag = false;
+            let that = $(this);
+            that.addClass("good-active").siblings("").removeClass("good-active");
+            setTimeout(function () {
+                $(".J-pop-toast").hide();
+                flag = true;
+            }, 1300)
+            $(".J-pop-toast").show();
+            $(".toast-msg").text("待开发")
+        }
     });
 
 })
