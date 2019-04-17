@@ -3,9 +3,12 @@
     font: 14px Tahoma,Helvetica,Arial,"\5b8b\4f53",sans-serif;
 }
 h3 {
+    width: 93%;
+    margin: 0 auto 5%;
     background-image: linear-gradient(to left,#4addf4, #1f9af4);
     padding: .2rem 0;
     color: #fff;
+    border-radius: 99px;
 }
 .index-banner {
     width: 100%;
@@ -86,8 +89,13 @@ h3 {
 }
 .video-msg-text p{
     margin: 0;
+    padding-top: .2rem;
 }
 .video-container {
     width: 100%;
     height: auto;
+}
+.list-video a {
+    align-items: start;
+    -webkit-align-items: flex-start;
 }
