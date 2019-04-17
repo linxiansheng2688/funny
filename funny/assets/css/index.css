@@ -1,5 +1,11 @@
 .ui-content{
     background-color: #fff;
+    font: 14px Tahoma,Helvetica,Arial,"\5b8b\4f53",sans-serif;
+}
+h3 {
+    background-image: linear-gradient(to left,#4addf4, #1f9af4);
+    padding: .2rem 0;
+    color: #fff;
 }
 .index-banner {
     width: 100%;
@@ -59,4 +65,29 @@
     background-color: #f6e6cc;
     transition: all .5s;
     border: none !important;
+}
+.none {
+    webkit-transition-duration: .4s;
+    transition-duration: .4s;
+    -webkit-transform: translate3d(-50%,-50%,0) scale(1);
+    transform: translate3d(-50%,-50%,0) scale(1);
+    opacity: 1;
+}
+.list-video {
+    padding: .2rem .6rem ;
+    border-bottom: 1px solid #ccc;
+}
+.video-img {
+    width: 4rem;
+    height: 4rem;
+    margin: 0 .2rem 0 0;
+    border: 1px solid #ccc;
+    background-image: url("../img/member_pic.jpg");
+}
+.video-msg-text p{
+    margin: 0;
+}
+.video-container {
+    width: 100%;
+    height: auto;
 }
