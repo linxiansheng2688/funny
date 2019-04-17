@@ -22,4 +22,32 @@ $(function () {
         }
     });
 
+    //playUrl  视频参数
+    //图片 cover.feed
+    //详情 description
+    //跳转 webUrl.forWeibo
+    let html = "";
+    let $container = $(".J-video-container");
+    (function () {
+      $.ajax({
+          url:"https://api.apiopen.top/todayVideo",
+          type:"post",
+          data:{},
+          success:function (data) {
+              const datas = data.result;
+              datas.map(function (item,index) {
+                  // console.log(item,index)
+                  if(item.data.content == undefined){
+
+                  }else{
+                      console.log(item.data.content.data)
+                      html+='<div class="list-video"><a href="'+ item.data.content.data.webUrl.forWeibo+'" class="ui-flex">   <div class="ui-full-img video-img ui-avatar-head" style="background-image: url('+item.data.content.data.cover.feed+')"></div> <div class="ui-cell-1 video-msg-text"> <p class="ui-nowrap-3">'+item.data.content.data.description+'</p></div></a></div>'
+                  }
+              })
+              $container.html(html)
+          }
+
+      })
+    }())
+
 })
