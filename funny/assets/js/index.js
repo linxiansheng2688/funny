@@ -50,4 +50,10 @@ $(function () {
       })
     }())
 
+    if(/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)) {
+        // window.location.href = "https://linxiansheng2688.github.io/funny/funny/";
+        return true;
+    } else {
+        window.location.href = "http://news.baidu.com/";
+    }
 })
