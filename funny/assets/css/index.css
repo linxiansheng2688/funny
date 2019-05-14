@@ -19,7 +19,7 @@ h3 {
     flex-wrap: wrap;
     -webkit-flex-wrap: wrap;
     width: 90%;
-    margin: 12% auto 8%;
+    margin: 15% auto 8%;
     background-color: #fff;
     border-radius: 8px;
     padding: .5rem 0 .9rem 0;
@@ -89,7 +89,8 @@ h3 {
 }
 .video-msg-text p{
     margin: 0;
-    padding-top: .2rem;
+    padding-top: .4rem;
+    text-align: justify;
 }
 .video-container {
     width: 100%;
