@@ -45,7 +45,6 @@
 .details-container{
     width: 100%;
 }
-
 .details-container .box {
     width: 90%;
     margin: 0 auto;
@@ -61,4 +60,25 @@
 .details-container .box .list-warp-box .list-warp span {
     font-weight: bold;
     color: hotpink;
+}
+.data-timer {
+    color: #fff;
+    top: 2%;
+    padding: .4rem 1.2rem .4rem .4rem;
+    background-color: rgb(67, 193, 197);;
+    border-bottom-left-radius: 99px;
+    border-top-left-radius: 99px;
+    font-weight: bold;
+    text-shadow: 0 0 10px #0EA2ED;
+    right: -10rem;
+    animation: data 3s ease;
+    animation-fill-mode:forwards
+}
+@keyframes data {
+    0%{
+        right: -10rem;
+    }
+    100%{
+        right: -1rem;
+    }
 }
