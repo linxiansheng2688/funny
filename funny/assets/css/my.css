@@ -44,6 +44,7 @@
 }
 .details-container{
     width: 100%;
+    margin-top: 5%;
 }
 .details-container .box {
     width: 90%;
@@ -71,6 +72,8 @@
     font-weight: bold;
     text-shadow: 0 0 10px #0EA2ED;
     right: -10rem;
+}
+.ani-data-right {
     animation: data 3s ease;
     animation-fill-mode:forwards
 }
