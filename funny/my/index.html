@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>个人中心</title>
+    <meta id="wxKeywords" name="Keywords" content="<keywords />">
+    <meta id="wxDescription" name="Description" content="<description />"/>
+    <meta name="apple-touch-fullscreen" content="YES"/>
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <meta http-equiv="Expires" content="-1"/>
+    <meta http-equiv="pragram" content="no-cache"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+    <link rel="stylesheet" href="../assets/css/actui.css">
+    <link rel="stylesheet" href="../assets/css/actui_animate.css">
+    <link rel="stylesheet" href="../assets/css/my.css">
+    <link rel="stylesheet" href="../assets/css/common.css">
+    <script src="../assets/js/jquery.min.js"></script>
+    <script src="../assets/js/my.js"></script>
+</head>
+<body>
+<div class="ui-content">
+    <!--背景动画-->
+    <canvas width="980" height="1743" id="cas"></canvas>
+    <!--github-->
+    <div class="ui-abs my-container">
+        <!--头像-->
+        <div class="ui-avatar-radius  user-hed">
+            <div style="background-image: url(https://avatars1.githubusercontent.com/u/36122549?s=460&v=4);"></div>
+        </div>
+        <p class="user-text ui-text-center">LinJian</p>
+        <!--Personal details-->
+        <div class="details-container">
+            <div class="box">
+                <ul class="list-warp-box">
+                    <li class="list-warp"><p><span>基本操作：</span>还原设计图，熟练HTML,HTML5,css,css3,Javascript,</p></li>
+                    <li class="list-warp"><p><span>移动端：</span>熟练rem，适配，兼容，SUI Mobile，Amaze UI，MUI</p></li>
+                    <li class="list-warp"><p><span>PC端：</span>熟练Bootstrap，pc端页面写的较少</p></li>
+                    <li class="list-warp"><p><span>拓展：</span>熟练less编译，图片压缩，代码压缩，雪碧图，代码规范</p></li>
+                    <li class="list-warp"><p><span>框架：</span>熟悉脚手架，webpack，vue全家桶，对Rn有做了解</p></li>
+                    <li class="list-warp"><p><span>小程序：</span>还原设计图，调用wxapi,组件，标签属性，使用方法，生命周期函数，json配置</p></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+<!--弹窗-->
+<div class="J-pop-toast none" id="msg"
+     style="z-index:9999;left: 50%; transform: translateX(-50%);  display:none; width: 40%; position: fixed;background:none;top:50%;">
+    <p class="toast-msg"
+       style="background: none repeat scroll 0 0 #000; border-radius: 30px;color: #fff; margin: 0 auto;padding: .5rem .2rem;text-align: center;width: 100%;opacity: 0.8;">
+
+    </p>
+</div>
+<!--背景动画-->
+<script>
+
+    var canvas = document.getElementById("cas");
+    var ctx = canvas.getContext("2d");
+
+    resize();
+    window.onresize = resize;
+
+    function resize() {
+        canvas.width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+        canvas.height = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+    }
+
+    var RAF = (function() {
+        return window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || window.oRequestAnimationFrame || window.msRequestAnimationFrame || function(callback) {
+            window.setTimeout(callback, 1000 / 60);
+        };
+    })();
+
+    // 鼠标活动时，获取鼠标坐标
+    var warea = {x: null, y: null, max: 20000};
+    window.addEventListener("touchmove",function(e) {
+        e = e || window.event;
+        warea.x = e.changedTouches[0].clientX;
+        warea.y = e.changedTouches[0].clientY;
+        console.log(e.changedTouches[0].clientX)
+    });
+    window.addEventListener("touchend" , function(e) {
+        warea.x = null;
+        warea.y = null;
+
+        e.preventDefault();
+    });
+
+    // 添加粒子
+    // x，y为粒子坐标，xa, ya为粒子xy轴加速度，max为连线的最大距离
+    var dots = [];
+    for (var i = 0; i < 300; i++) {
+        var x = Math.random() * canvas.width;
+        var y = Math.random() * canvas.height;
+        var xa = Math.random() * 2 - 1;
+        var ya = Math.random() * 2 - 1;
+
+        dots.push({
+            x: x,
+            y: y,
+            xa: xa,
+            ya: ya,
+            max: 6000
+        })
+    }
+
+    // 延迟100秒开始执行动画，如果立即执行有时位置计算会出错
+    setTimeout(function() {
+        animate();
+    }, 100);
+
+    // 每一帧循环的逻辑
+    function animate() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+        // 将鼠标坐标添加进去，产生一个用于比对距离的点数组
+        var ndots = [warea].concat(dots);
+
+        dots.forEach(function(dot) {
+
+            // 粒子位移
+            dot.x += dot.xa;
+            dot.y += dot.ya;
+
+            // 遇到边界将加速度反向
+            dot.xa *= (dot.x > canvas.width || dot.x < 0) ? -1 : 1;
+            dot.ya *= (dot.y > canvas.height || dot.y < 0) ? -1 : 1;
+
+            // 绘制点
+            ctx.fillRect(dot.x - 0.5, dot.y - 0.5, 1, 1);
+
+            // 循环比对粒子间的距离
+            for (var i = 0; i < ndots.length; i++) {
+                var d2 = ndots[i];
+
+                if (dot === d2 || d2.x === null || d2.y === null) continue;
+
+                var xc = dot.x - d2.x;
+                var yc = dot.y - d2.y;
+
+                // 两个粒子之间的距离
+                var dis = xc * xc + yc * yc;
+
+                // 距离比
+                var ratio;
+
+                // 如果两个粒子之间的距离小于粒子对象的max值，则在两个粒子间画线
+                if (dis < d2.max) {
+
+                    // 如果是鼠标，则让粒子向鼠标的位置移动
+                    if (d2 === warea && dis > (d2.max / 2)) {
+                        dot.x -= xc * 0.03;
+                        dot.y -= yc * 0.03;
+                    }
+
+                    // 计算距离比
+                    ratio = (d2.max - dis) / d2.max;
+
+                    // 画线
+                    ctx.beginPath();
+                    ctx.lineWidth = ratio / 2;
+                    ctx.strokeStyle = 'rgba(48,198,232,' + (ratio + 0.2) + ')';
+                    ctx.moveTo(dot.x, dot.y);
+                    ctx.lineTo(d2.x, d2.y);
+                    ctx.stroke();
+                }
+            }
+
+            // 将已经计算过的粒子从数组中删除
+            ndots.splice(ndots.indexOf(dot), 1);
+        });
+
+        RAF(animate);
+    }
+
+</script>
+</body>
+</html>
+
