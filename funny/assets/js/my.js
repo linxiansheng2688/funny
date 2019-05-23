@@ -11,4 +11,6 @@ $(function () {
         var seconds = myDate.getSeconds();
         $("#showDate").html(date+" "+hours+":"+minutes+":"+seconds); //将值赋给div
     }
+
+$(".data-timer").addClass("ani-data-right")
 })
