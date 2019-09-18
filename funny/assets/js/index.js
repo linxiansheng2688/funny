@@ -22,38 +22,75 @@ $(function () {
         }
     });
 
-    //playUrl  视频参数
-    //图片 cover.feed
-    //详情 description
-    //跳转 webUrl.forWeibo
+    //视频参数 video
+    // 标题 text
+    //图片 thumbnail
+    // 时间 passtime
+    
     let html = "";
+    var page = 1,tmp=[],flags=true;
     let $container = $(".J-video-container");
-    (function () {
-      $.ajax({
-          url:"https://api.apiopen.top/todayVideo",
-          type:"post",
-          data:{},
-          success:function (data) {
-              const datas = data.result;
-              datas.map(function (item,index) {
-                  // console.log(item,index)
-                  if(item.data.content == undefined){
-
-                  }else{
-                      console.log(item.data.content.data)
-                      html+='<div class="list-video"><a href="'+ item.data.content.data.webUrl.forWeibo+'" class="ui-flex">   <div class="ui-full-img video-img ui-avatar-head" style="background-image: url('+item.data.content.data.cover.feed+')"></div> <div class="ui-cell-1 video-msg-text"> <p class="ui-nowrap-3">'+item.data.content.data.description+'</p></div></a></div>'
+    function initData(page){
+        $.ajax({
+            url:"https://api.apiopen.top/getJoke",
+            type:"post",
+            data:{
+                page:page,
+                count:4,
+                type:"video"
+            },
+            success:function (data) {
+                // console.log(data)
+                  if(data.code == 200){
+                      const datas = data.result;
+                      datas.map(function (item,index) {
+                          // console.log(item,index)
+                          html+='<div class="list-video J-tap-video" data-url="'+item.video+'"> <div class="ui-full-img video-img"> <img src="'+item.thumbnail+'" alt=""></div> <p class="title ui-nowrap-2">'+item.text+'</p> <p class="timer">'+item.passtime+'</p></div>'
+                      })
+                      $container.html(html)
+                      
                   }
-              })
-              $container.html(html)
-          }
+           
+            }
+  
+        })
+    }
+    initData(page);
 
-      })
-    }())
+    let $moreBtn = $(".J-tap-page");
+    $moreBtn.on("click",function(){
+      flags ? initData(++page) : '';
+    });
+
+    var video1 = document.getElementById("videoPlay1"),//获取视频元素
+        J_video_pop =   $(".J-video-pop"),
+        clsoe_btn = $(".J-close-btn");
+
+    $container.on("click",".J-tap-video",function(){
+        console.log();
+        $('#videoPlay1').attr("src",$(this).attr("data-url"));
+        $('#videoPlay1').attr("type",$(this).attr("data-url"))
+        J_video_pop.show();
+        $('#videoPlay1').show();//视频展示
+        video1.play();//视频播放
+       
+        video1.onended = function() {//视频播放结束执行的函数
+            $('#videoPlay1').hide();//视频隐藏
+            video1.pause();
+            J_video_pop.hide();
+        };
+    });
+
+    clsoe_btn.on("click",function(){
+        $('#videoPlay1').hide();//视频隐藏
+        J_video_pop.hide();
+        video1.pause();
+    })
 
     if(/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)) {
         // window.location.href = "https://linxiansheng2688.github.io/funny/funny/";
         return true;
     } else {
-        window.location.href = "http://news.baidu.com/";
+        // window.location.href = "http://news.baidu.com/";
     }
 })
