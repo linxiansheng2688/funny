@@ -3,8 +3,32 @@
 $(function () {
     // let 有块级作用域 可再次赋值
     // var  全局变量 无块级作用域 可再次赋值
-//    const 有块级作用域 不可再次赋值 声明要赋值
-// 选择链接
+    //const 有块级作用域 不可再次赋值 声明要赋值
+
+    // 初始列表
+    var dataList = {
+        data:[
+                {name:'2048',url:'./Game_2048/index.html',icon:'https://iconfont.alicdn.com/t/1557371281179.jpg@100h_100w.jpg'},
+                {name:'疯狂影视',url:'http://ifkdy.com/',icon:'https://iconfont.alicdn.com/t/1557371281179.jpg@100h_100w.jpg'},
+                {name:'遇见工具',url:'https://met.red/',icon:'https://iconfont.alicdn.com/t/1557371281179.jpg@100h_100w.jpg'},
+                {name:'1',url:'javascript:void(0)',icon:'https://iconfont.alicdn.com/t/1557371281179.jpg@100h_100w.jpg'},
+                {name:'1',url:'javascript:void(0)',icon:'https://iconfont.alicdn.com/t/1557371281179.jpg@100h_100w.jpg'},
+                {name:'1',url:'javascript:void(0)',icon:'https://iconfont.alicdn.com/t/1557371281179.jpg@100h_100w.jpg'},
+                {name:'1',url:'javascript:void(0)',icon:'https://iconfont.alicdn.com/t/1557371281179.jpg@100h_100w.jpg'},
+                {name:'个人中心',url:'my/index.html',icon:'https://iconfont.alicdn.com/t/1557371281179.jpg@100h_100w.jpg'}
+                ]
+    };
+
+    (function(){
+        let tmp = "",$menu = $(".J-menu");
+
+        dataList.data.forEach((item,index)=>{
+                tmp+='<a href="'+item.url+'" class="nav-list ani-touch-scale"><div class="ui-full-img nav-icon"><img src="'+item.icon+'" alt=""></div><p class="ui-text-center nav-list-text">'+item.name+'</p></a>'
+        });
+        $menu.html(tmp);
+    }());
+
+    // 选择链接
     let $navs = $(".J-good-list li");
     var flag = true;
 
@@ -54,7 +78,7 @@ $(function () {
             }
   
         })
-    }
+    };
     initData(page);
 
     let $moreBtn = $(".J-tap-page");
@@ -67,7 +91,6 @@ $(function () {
         clsoe_btn = $(".J-close-btn");
 
     $container.on("click",".J-tap-video",function(){
-        console.log();
         $('#videoPlay1').attr("src",$(this).attr("data-url"));
         $('#videoPlay1').attr("type",$(this).attr("data-url"))
         J_video_pop.show();
@@ -85,12 +108,17 @@ $(function () {
         $('#videoPlay1').hide();//视频隐藏
         J_video_pop.hide();
         video1.pause();
-    })
+    });
 
+    //每日推荐
+    // function dily(){
+       
+    // };
+    // dily();
     if(/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)) {
         // window.location.href = "https://linxiansheng2688.github.io/funny/funny/";
         return true;
     } else {
-        // window.location.href = "http://news.baidu.com/";
-    }
+        window.location.href = "http://news.baidu.com/";
+    };
 })
