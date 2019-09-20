@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>LIN</title>
+    <meta id="wxKeywords" name="Keywords" content="<keywords />">
+    <meta id="wxDescription" name="Description" content="<description />"/>
+    <meta name="apple-touch-fullscreen" content="YES"/>
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <meta http-equiv="Expires" content="-1"/>
+    <meta http-equiv="pragram" content="no-cache"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+    <link rel="stylesheet" href="assets/css/actui.css">
+    <link rel="stylesheet" href="assets/css/actui_animate.css">
+    <link rel="stylesheet" href="assets/css/index.css">
+    <link rel="stylesheet" href="assets/css/common.css">
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/index.js"></script>
+</head>
+<body>
+<div class="ui-content">
+    <!--顶部图-->
+    <div class="ui-abs ui-bg-full index-banner">
+    </div>
+    <!--导航-->
+    <div class="ui-flex nav-menu-container ui-bg-full J-menu">
+      
+    </div>
+    <!--content-->
+    <div class="content-box ui-text-center">
+         <!-- <ul class="list-content ui-flex ui-text-center J-good-list"> -->
+            <!-- <li data-icd="3">
+              <a href="javascript:void(0);">0</a>
+            </li> -->
+        <!-- </ul> -->
+        <h3>每日热推</h3>
+        <div class="video-container J-video-container ui-flex-between">
+        </div>
+        <div class="LoadMore ui-text-center J-tap-page">加载更多</div>
+    </div>
+</div>
+
+<!--弹窗-->
+<div class="J-pop-toast none" id="msg"
+     style="z-index:9999;left: 50%; transform: translateX(-50%);  display:none; width: 40%; position: fixed;background:none;top:50%;">
+    <p class="toast-msg"
+       style="background: none repeat scroll 0 0 #000; border-radius: 30px;color: #fff; margin: 0 auto;padding: .5rem .2rem;text-align: center;width: 100%;opacity: 0.8;">
+    </p>
+</div>
+<!-- video -->
+<div class="video-pop ui-abs dis-none J-video-pop">
+    <video height="100%" id="videoPlay1" playsinline preload="auto" src="http://uvideo.spriteapp.cn/video/2019/0917/5d805bd38bb7f_wpd.mp4" type="http://uvideo.spriteapp.cn/video/2019/0917/5d805bd38bb7f_wpd.mp4" width="100%" x5-video-player-type="h5" x5-video-player-fullscreen="true"  style="object-fit:fill;height:100vh;"></video>
+    <span class="ui-abs close-btn J-close-btn">关闭</span>
+</div>
+</body>
+</html>

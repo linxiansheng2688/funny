@@ -1,0 +1,87 @@
+.ui-content {
+    overflow: hidden;
+    background-color: rgba(0,0,0,.9)!important;
+}
+.user-hed {
+   margin: 0 auto;
+    margin-top: 12%;
+}
+.user-hed  {
+    box-shadow: 0 0 20px rgba(48,198,232,1);
+}
+.my-container {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+.user-text {
+    padding: 0;
+    margin: .2rem 0;
+}
+.user-text {
+    font-family: arial;
+    font-weight: bold;
+    /*text-transform: uppercase;*/
+    font-size: .8rem;
+    -webkit-animation: background 20s linear infinite;
+    animation: background 20s linear infinite;
+    background: -webkit-linear-gradient(0deg, rgba(150,48,30,1) 0%,rgba(199,201,88,1) 10%,rgba(28,147,46,1) 20%,rgba(74,165,168,1) 30%,rgba(89,90,165,1) 40%,rgba(84,16,67,1) 50%,rgba(28,58,63,1) 60%,rgba(82,175,183,1) 70%,rgba(78,170,76,1) 80%,rgba(150,48,30,1) 90%,rgba(199,201,88,1) 100%);
+
+    background: linear-gradient(90deg, rgba(150,48,30,1) 0%,rgba(199,201,88,1) 10%,rgba(28,147,46,1) 20%,rgba(74,165,168,1) 30%,rgba(89,90,165,1) 40%,rgba(84,16,67,1) 50%,rgba(28,58,63,1) 60%,rgba(82,175,183,1) 70%,rgba(78,170,76,1) 80%,rgba(150,48,30,1) 90%,rgba(199,201,88,1) 100%);
+    background-size: 1000% 100%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+}
+@-webkit-keyframes background {
+    0%{background-position:0% 50%}
+    100%{background-position:100% 50%}
+}
+@keyframes background {
+    0%{background-position:0% 50%}
+    100%{background-position:100% 50%}
+}
+.details-container{
+    width: 100%;
+    margin-top: 5%;
+}
+.details-container .box {
+    width: 90%;
+    margin: 0 auto;
+    background-color: rgba(0,0,0,.8);
+    border-radius: 8px;
+    padding: .4rem;
+    color: #fff;
+    box-shadow: 0 0 20px rgba(48,198,232,1);
+}
+.details-container .box .list-warp-box .list-warp {
+    word-break:break-all
+}
+.details-container .box .list-warp-box .list-warp span {
+    font-weight: bold;
+    color: hotpink;
+}
+.data-timer {
+    color: #fff;
+    top: 2%;
+    padding: .4rem 1.2rem .4rem .4rem;
+    background-color: rgb(67, 193, 197);;
+    border-bottom-left-radius: 99px;
+    border-top-left-radius: 99px;
+    font-weight: bold;
+    text-shadow: 0 0 10px #0EA2ED;
+    right: -10rem;
+}
+.ani-data-right {
+    animation: data 3s ease;
+    animation-fill-mode:forwards
+}
+@keyframes data {
+    0%{
+        right: -10rem;
+    }
+    100%{
+        right: -1rem;
+    }
+}
