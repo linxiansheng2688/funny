@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>LIN_音乐</title>
+    <meta id="wxKeywords" name="Keywords" content="<keywords />">
+    <meta id="wxDescription" name="Description" content="<description />"/>
+    <meta name="apple-touch-fullscreen" content="YES"/>
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <meta http-equiv="Expires" content="-1"/>
+    <meta http-equiv="pragram" content="no-cache"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+    <link rel="stylesheet" href="../assets/css/actui.css">
+    <link rel="stylesheet" href="../assets/css/actui_animate.css">
+    <link rel="stylesheet" href="../assets/css/music.css">
+    <link rel="stylesheet" href="../assets/css/common.css">
+    <script src="../assets/js/jquery.min.js"></script>
+    <script src="../assets/js/music.js"></script>
+</head>
+<body>
+<div class="ui-content">
+    <!-- 搜索框 -->
+    <div class="music-search ui-flex-center">
+        <div class="input-box">
+            <input type="text" placeholder="请输入您喜欢的歌曲" class="J-search-val">
+        </div>
+        <div class="search-btn J-sou-btn">
+            <span>搜索</span>
+        </div>
+    </div>
+    <!-- 歌曲展示 -->
+    <div class="audio-box J-audio-box">
+
+    </div>
+    <!--弹窗-->
+    <div class="J-pop-toast none" id="msg"
+        style="z-index:9999;left: 50%; transform: translateX(-50%);  display:none; width: 40%; position: fixed;background:none;top:50%;">
+        <p class="toast-msg"
+        style="background: none repeat scroll 0 0 #000; border-radius: 30px;color: #fff; margin: 0 auto;padding: .5rem .2rem;text-align: center;width: 100%;opacity: 0.8;">
+        </p>
+    </div>
+</div>
+</body>
+</html>
+
