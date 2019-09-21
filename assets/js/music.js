@@ -1,3 +1,7 @@
+// author:LIN/2019/9/21
+
+charset =  "utf-8";
+
 $(function(){
     var totl = {
         inputs:$(".J-search-val"),
@@ -9,8 +13,12 @@ $(function(){
         result:"",
         startarr:['隔壁老樊','颜人中','林俊杰','陈奕迅','许嵩','薛之谦','李荣浩'],
         audioBox:$(".J-audio-box"),
+        initAudio:{
+            autoPlay:true,
+            playlist:[]
+        },
+        AudioBox:$(".jAudio--player"),
         getData:function(){
-            console.log(this.intVal)
             let that = this;
             $.ajax({
                 url:"https://api.apiopen.top/searchMusic",
@@ -20,7 +28,22 @@ $(function(){
                     console.log(res)
                     if(res.code == 200 && res.result !== ""){
                         that.result = res.result;
-                        that.lsitData();
+                        // 播放器初始化
+                        res.result.forEach((item,index)=>{
+                        
+                        that.initAudio.playlist[index] ={
+                            file: res.result[index].url,
+                            thumb: res.result[index].pic,
+                            trackName: res.result[index].title,
+                            trackArtist: res.result[index].author,
+                            trackAlbum: "Single",
+                        };
+                        
+                        });
+                        // 初始化插件
+                        that.AudioBox.jAudio(that.initAudio);
+                        // 不再使用默认列表
+                        // that.lsitData();
                     }else{
                         totl.pop.show();
                         totl.popText.text("兄dei，我尽力了没搜到呀！");
@@ -40,13 +63,15 @@ $(function(){
             });
           that.audioBox.html(html);
         },
-        init:function(){
+        init:function(flag){
             let that = this;
-            let num = Math.floor(Math.random()*(that.startarr.length - 0)+0);
-            // 接口限制 菜单
-            that.intVal = that.startarr[num];
-            that.inputs.val(that.startarr[num]);
-            that.getData();
+            if(flag){
+                let num = Math.floor(Math.random()*(that.startarr.length - 0)+0);
+                // 接口限制 菜单模拟一下
+                that.intVal = that.startarr[num];
+                that.inputs.val(that.startarr[num]);
+                that.getData();
+              }
         }
     };
 
@@ -58,10 +83,10 @@ $(function(){
         if($.trim(totl.inputs.val()) =="") return totl.pop.show(),totl.popText.text("啥也不填我能读心术呀！"),setTimeout(()=>{totl.pop.hide();  totl.flag = true;},2000);
 
         totl.intVal = totl.inputs.val();
-        console.log(totl)
+        // console.log(totl)
         totl.getData();
         totl.flag = true;
     });
     
-    totl.init();
+    totl.init(true);
 });

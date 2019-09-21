@@ -28,8 +28,11 @@
 }
 .audio-box {
     width: auto;
+    max-height:81%;
     margin-top: .4rem;
     background: #fff;
+    overflow-y: scroll;
+    -webkit-overflow-scrolling:touch;
 }
 .audio-box .audio-list{
     align-items:flex-start;
@@ -49,4 +52,32 @@
 }
 .audio-box .audio-list .list-info .name-txt{
     padding:.4rem 0 0 .4rem;
+}
+
+/* 播放器样式 */
+.jAudio--player {
+    display: table;
+    overflow: hidden;
+    background: #fff;
+    box-shadow: 0 0 0 #fff !important;
+    margin: 0 auto !important;
+    width: 100% !important;
+}
+.jAudio--playlist {
+    max-height: 14rem !important;
+    overflow-y: scroll !important;
+    -webkit-overflow-scrolling:touch !important;
+}
+.jAudio--player .jAudio--playlist .jAudio--playlist-item {
+    display: block;
+    width: 100%;
+    padding: .6rem 2rem !important;
+    display: table;
+    border-bottom: 1px solid #ccc;
+}
+.jAudio--playlist-meta-text P {
+    margin: 0;
+}
+.jAudio--player .jAudio--status-bar{
+    padding: 1rem 2rem 2rem 2rem !important;
 }
