@@ -11,7 +11,7 @@ $(function(){
         flag:true,
         intVal:"",
         result:"",
-        startarr:['隔壁老樊','颜人中','林俊杰','陈奕迅','许嵩','薛之谦','李荣浩'],
+        startarr:['隔壁老樊','颜人中','林俊杰','陈奕迅','许嵩','薛之谦','李荣浩','张韶涵'],
         audioBox:$(".J-audio-box"),
         initAudio:{
             autoPlay:true,
@@ -25,7 +25,7 @@ $(function(){
                 type:"get",
                 data:{name:that.intVal},
                 success:(res)=>{
-                    console.log(res)
+                    // console.log(res)
                     if(res.code == 200 && res.result !== ""){
                         that.result = res.result;
                         // 播放器初始化
@@ -63,6 +63,10 @@ $(function(){
             });
           that.audioBox.html(html);
         },
+        runDdata:function(){
+            let that = this;
+         
+        },
         init:function(flag){
             let that = this;
             if(flag){
@@ -87,6 +91,9 @@ $(function(){
         totl.getData();
         totl.flag = true;
     });
-    
+  
+
     totl.init(true);
+    console.log(totl);
+
 });
