@@ -96,4 +96,18 @@ $(function(){
     totl.init(true);
     console.log(totl);
 
+
+    // $.ajax({
+    //     url:"https://route.showapi.com/255-1",
+    //     data:{
+    //         page: '1' ,
+    //         showapi_appid: '19791',
+    //         type:'41',
+    //         showapi_sign:'1685dd5bd4c0a3c6af5b9da508985964'
+    //     },
+    //     success:function(res){
+    //         console.log(res)
+    //     }
+    // })
+
 });

@@ -12,8 +12,8 @@ $(function () {
                 {name:'疯狂影视',url:'http://ifkdy.com/',icon:'https://iconfont.alicdn.com/t/1557371281179.jpg@100h_100w.jpg'},
                 {name:'遇见工具',url:'https://met.red/',icon:'https://iconfont.alicdn.com/t/1557371281179.jpg@100h_100w.jpg'},
                 {name:'音乐',url:'./music/index.html',icon:'https://iconfont.alicdn.com/t/1557371281179.jpg@100h_100w.jpg'},
-                {name:'1',url:'javascript:void(0)',icon:'https://iconfont.alicdn.com/t/1557371281179.jpg@100h_100w.jpg'},
-                {name:'1',url:'javascript:void(0)',icon:'https://iconfont.alicdn.com/t/1557371281179.jpg@100h_100w.jpg'},
+                {name:'每日推荐',url:'./daily/index.html',icon:'https://iconfont.alicdn.com/t/1557371281179.jpg@100h_100w.jpg'},
+                {name:'LIN-TV',url:'http://b0bc6f5747b9adc1.free.webt.top/',icon:'https://iconfont.alicdn.com/t/1557371281179.jpg@100h_100w.jpg'},
                 {name:'1',url:'javascript:void(0)',icon:'https://iconfont.alicdn.com/t/1557371281179.jpg@100h_100w.jpg'},
                 {name:'个人中心',url:'my/index.html',icon:'https://iconfont.alicdn.com/t/1557371281179.jpg@100h_100w.jpg'}
                 ]
