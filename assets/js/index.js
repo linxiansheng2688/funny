@@ -69,7 +69,7 @@ $(function () {
                       const datas = data.result;
                       datas.map(function (item,index) {
                           // console.log(item,index)
-                          html+='<div class="list-video J-tap-video" data-url="'+item.video+'"> <div class="ui-full-img video-img"> <img src="'+item.thumbnail+'" alt=""></div> <p class="title ui-nowrap-2">'+item.text+'</p> <p class="timer">'+item.passtime+'</p></div>'
+                          html+='<div class="list-video J-tap-video" data-url="'+item.video+'"> <div class="ui-full-img video-img"> <img src="'+item.thumbnail+'" alt=""></div> <p class="title ui-nowrap-2">'+item.text+'</p> <p class="timer"><span>作者：'+item.name+'</span></p></div>'
                       })
                       $container.html(html)
                       
