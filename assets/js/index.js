@@ -35,7 +35,7 @@ $(function () {
                return false;
            }
        
-        })；
+        });
     }());
 
     // 选择链接
