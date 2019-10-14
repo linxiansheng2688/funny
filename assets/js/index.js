@@ -16,7 +16,7 @@ $(function () {
                 {name:'LIN-TV',url:'http://b0bc6f5747b9adc1.free.webt.top/',icon:'https://iconfont.alicdn.com/t/1557371281179.jpg@100h_100w.jpg'},
                 {name:'1',url:'javascript:void(0)',icon:'https://iconfont.alicdn.com/t/1557371281179.jpg@100h_100w.jpg'},
                 {name:'个人中心',url:'my/index.html',icon:'https://iconfont.alicdn.com/t/1557371281179.jpg@100h_100w.jpg'}
-                ]
+            ]
     };
 
     (function(){
@@ -26,6 +26,16 @@ $(function () {
                 tmp+='<a href="'+item.url+'" class="nav-list ani-touch-scale"><div class="ui-full-img nav-icon"><img src="'+item.icon+'" alt=""></div><p class="ui-text-center nav-list-text">'+item.name+'</p></a>'
         });
         $menu.html(tmp);
+        $menu.on("click",".nav-list",function(){
+        
+          var word = prompt("开发者名称","");
+          if(word =="林剑"){
+             
+           }else{
+               return false;
+           }
+       
+        })；
     }());
 
     // 选择链接
