@@ -26,7 +26,7 @@ $(function () {
                 tmp+='<a href="'+item.url+'" class="nav-list ani-touch-scale"><div class="ui-full-img nav-icon"><img src="'+item.icon+'" alt=""></div><p class="ui-text-center nav-list-text">'+item.name+'</p></a>'
         });
         $menu.html(tmp);
-        $menu.on("click",".nav-list",function(){
+        $menu.on("click",".nav-list:last",function(){
         
           var word = prompt("开发者名称","");
           if(word =="林剑"){
