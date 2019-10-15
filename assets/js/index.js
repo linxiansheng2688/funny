@@ -60,11 +60,11 @@ $(function () {
     // 标题 text
     //图片 thumbnail
     // 时间 passtime
-    
     let html = "";
     var page = 1,tmp=[],flags=true;
     let $container = $(".J-video-container");
     function initData(page){
+        $("#loading").show();
         $.ajax({
             url:"https://api.apiopen.top/getJoke",
             type:"post",
@@ -81,8 +81,8 @@ $(function () {
                           // console.log(item,index)
                           html+='<div class="list-video J-tap-video" data-url="'+item.video+'"> <div class="ui-full-img video-img"> <img src="'+item.thumbnail+'" alt=""></div> <p class="title ui-nowrap-2">'+item.text+'</p> <p class="timer"><span>作者：'+item.name+'</span></p></div>'
                       })
+                      $("#loading").hide();
                       $container.html(html)
-                      
                   }
            
             }
@@ -91,10 +91,27 @@ $(function () {
     };
     initData(page);
 
+    // 点击加载更多
     let $moreBtn = $(".J-tap-page");
     $moreBtn.on("click",function(){
       flags ? initData(++page) : '';
     });
+
+    // 上拉加载
+    var nScrollHight = 0; //滚动距离总长(注意不是滚动条的长度)  
+    var nScrollTop = 0;   //滚动到的当前位置  
+    var nDivHight = $(".ui-content").height();  
+    $(".ui-content").scroll(function(){  
+      nScrollHight = $(this)[0].scrollHeight;  
+      nScrollTop = $(this)[0].scrollTop;  
+      if(nScrollTop + nDivHight >= nScrollHight) {
+        flags ? initData(++page) : '';
+      }else{
+          return false;
+      }
+     
+    });  
+
 
     var video1 = document.getElementById("videoPlay1"),//获取视频元素
         J_video_pop =   $(".J-video-pop"),
