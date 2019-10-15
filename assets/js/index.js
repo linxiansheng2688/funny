@@ -104,14 +104,30 @@ $(function () {
     $(".ui-content").scroll(function(){  
       nScrollHight = $(this)[0].scrollHeight;  
       nScrollTop = $(this)[0].scrollTop;  
+      if (nScrollTop > 130) {
+        $("#btn").fadeIn(200);
+      } else {
+        $("#btn").fadeOut(200);
+      }
+
       if(nScrollTop + nDivHight >= nScrollHight) {
         flags ? initData(++page) : '';
       }else{
           return false;
       }
      
-    });  
+   
 
+    });  
+  
+    //当点击跳转链接后，回到页面顶部位置
+    $("#btn").click(function() {
+        $('.ui-content').animate({
+          scrollTop: 0
+        },
+        500);
+        return false;
+      });
 
     var video1 = document.getElementById("videoPlay1"),//获取视频元素
         J_video_pop =   $(".J-video-pop"),
@@ -136,6 +152,7 @@ $(function () {
         J_video_pop.hide();
         video1.pause();
     });
+
 
     //每日推荐
     // function dily(){

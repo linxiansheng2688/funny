@@ -83,11 +83,12 @@ h3 {
 }
 .video-container .list-video {
     width: 49%;
-    margin-bottom: .6rem;
+    margin-bottom: .4rem;
     max-height: 16rem;
     overflow: hidden;
     border-radius: .3rem;
-    border: 1px solid #ccc
+    border: 1px solid #f1f1f1;
+    box-shadow: 0 -1px 4px #ceccca;
 }
 .video-container .list-video p{
     margin: 0;
