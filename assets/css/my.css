@@ -74,14 +74,14 @@
     right: -10rem;
 }
 .ani-data-right {
-    animation: data 3s ease;
+    animation: data 4s ease;
     animation-fill-mode:forwards
 }
 @keyframes data {
     0%{
         right: -10rem;
     }
-    100%{
+    50%,100%{
         right: -1rem;
     }
 }
