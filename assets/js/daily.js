@@ -33,7 +33,7 @@ $(function(){
         console.log( $(this))
         $(this).addClass("active-tab").siblings().removeClass("active-tab");
         // dataUrl = $(this).attr("data-url");
-        $(".ui-content").append($(this).attr("data-url")+'<br/>');
+        // $(".ui-content").append($(this).attr("data-url")+'<br/>');
     });
 
 
