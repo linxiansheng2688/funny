@@ -1,8 +1,8 @@
 /* 分类导航 */
 .tab-navbr {
     width: 100%;
-    /* height: 2rem; */
-    /* line-height: 2rem; */
+    height: 2rem;
+    line-height: 2rem;
     font-family: Arial, Helvetica, sans-serif;
     border-bottom: 1px solid #ccc;
     background: #fff;
@@ -25,12 +25,12 @@
     height: 6px;
     background-color: rgba(240, 240, 240, .1);
   }
-
+.tab-navbr .list-itmes {
+      height: 100%;
+  }
 .tab-navbr .list-itmes span{
     display: block;
     width: 3.2rem;
-    height: 1.4rem;
-    line-height: 1.78rem;
 }
 .video-container {
     padding: .4rem;
