@@ -1,5 +1,8 @@
 
+
+
 $(function(){
+  
     var $tabBox = $(".J-nav");
     // 初始列表
     function initList(){
@@ -30,6 +33,7 @@ $(function(){
         console.log( $(this))
         $(this).addClass("active-tab").siblings().removeClass("active-tab");
         // dataUrl = $(this).attr("data-url");
+        $(".ui-content").append($(this).attr("data-url")+'<br/>');
     });
 
 
@@ -43,10 +47,11 @@ $(function(){
     let $container = $(".J-video-container");
     function initData(page,apiUrl){
         $.ajax({
-            url:'../php/TabdataApi.php',
+            url:apiUrl,
             type:"get",
+            dataType : "jsonp",
             data:{
-                type:1
+               
             },
          
             success:function (data) {
