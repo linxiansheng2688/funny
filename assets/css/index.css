@@ -84,7 +84,7 @@ h3 {
 .video-container .list-video {
     width: 49%;
     margin-bottom: .6rem;
-    max-height: 12rem;
+    max-height: 16rem;
     overflow: hidden;
     border-radius: .3rem;
     border: 1px solid #ccc
@@ -102,7 +102,7 @@ h3 {
     color: #fb8531;
 }
 .video-container .list-video .video-img {
-    height: 8rem;
+    height: 10rem;
     margin-bottom: .3rem;
 }
 .video-container .list-video .video-img img {
