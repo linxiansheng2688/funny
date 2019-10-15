@@ -98,7 +98,7 @@ $(function () {
     });
 
     // 上拉加载
-    var nScrollHight = 0; //滚动距离总长(注意不是滚动条的长度)  
+    var nScrollHight = 0; //滚动距离总长(注意不是滚动条的长度  
     var nScrollTop = 0;   //滚动到的当前位置  
     var nDivHight = $(".ui-content").height();  
     $(".ui-content").scroll(function(){  
@@ -116,8 +116,6 @@ $(function () {
           return false;
       }
      
-   
-
     });  
   
     //当点击跳转链接后，回到页面顶部位置
@@ -127,7 +125,7 @@ $(function () {
         },
         500);
         return false;
-      });
+    });
 
     var video1 = document.getElementById("videoPlay1"),//获取视频元素
         J_video_pop =   $(".J-video-pop"),

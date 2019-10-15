@@ -1,30 +1,30 @@
 
 $(function(){
     var $tabBox = $(".J-nav");
-// 初始列表
-function initList(){
-    let html = "";
+    // 初始列表
+    function initList(){
+        let html = "";
 
-    $.ajax({
-        url:"https://api.apiopen.top/videoHomeTab",
-        type:"get",
-        success:function (data) {
-            console.log(data);
-            if(data.code ==200){
-                let datas = data.result;
-         
-                datas.forEach(function(item,index){
-                    item.id == -1 ?'':  html+='<div class="list-itmes" data-url="'+item.apiUrl+'"><span>'+item.name+'</span></div>';
-                });
-                $tabBox.html(html);
-                $tabBox.find(".list-itmes").eq(0).addClass("active-tab");
-                initData(1,datas[1].apiUrl)
+        $.ajax({
+            url:"https://api.apiopen.top/videoHomeTab",
+            type:"get",
+            success:function (data) {
+                console.log(data);
+                if(data.code ==200){
+                    let datas = data.result;
+            
+                    datas.forEach(function(item,index){
+                        item.id == -1 ?'':  html+='<div class="list-itmes" data-url="'+item.apiUrl+'"><span>'+item.name+'</span></div>';
+                    });
+                    $tabBox.html(html);
+                    $tabBox.find(".list-itmes").eq(0).addClass("active-tab");
+                    initData(1,datas[1].apiUrl)
+                }
             }
-        }
-    })
-};
-initList();
-// tab切换
+        })
+    };
+    initList();
+    // tab切换
 
     $tabBox.on("click",".list-itmes",function(){
         console.log( $(this))
@@ -37,7 +37,7 @@ initList();
     // 标题 text
     //图片 thumbnail
     // 时间 passtime
-// https://api.apiopen.top/videoHomeTab
+    // https://api.apiopen.top/videoHomeTab
     let html = "";
     var page = 1,tmp=[],flags=true;
     let $container = $(".J-video-container");
