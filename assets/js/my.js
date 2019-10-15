@@ -10,7 +10,8 @@ $(function () {
         var minutes = myDate.getMinutes();
         var seconds = myDate.getSeconds();
         $("#showDate").html(date+" "+hours+":"+minutes+":"+seconds); //将值赋给div
+        setTimeout(getTime,1000); //每隔一秒运行一次
     }
-    setInterval(getTime,1000); //每隔一秒运行一次
+    getTime();
 $(".data-timer").addClass("ani-data-right")
 })
