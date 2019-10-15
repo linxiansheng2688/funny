@@ -71,7 +71,7 @@
 .jAudio--player .jAudio--playlist .jAudio--playlist-item {
     display: block;
     width: 100%;
-    padding: .6rem 2rem !important;
+    padding: .3rem 2rem !important;
     display: table;
     border-bottom: 1px solid #ccc;
 }
@@ -79,5 +79,5 @@
     margin: 0;
 }
 .jAudio--player .jAudio--status-bar{
-    padding: 1rem 2rem 2rem 2rem !important;
+    padding: 0rem 2rem 1.1rem 2rem !important;
 }
