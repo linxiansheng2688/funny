@@ -83,7 +83,7 @@ html {
 .jAudio--player .jAudio--controls li {
   position: relative;
   width: 33.3333%;
-  height: 5rem;
+  height: 3rem;
   line-height: 5rem;
 }
 .jAudio--player .jAudio--thumb {
