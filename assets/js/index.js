@@ -1,9 +1,6 @@
 // lin 4/16 create
 
 $(function () {
-    // let 有块级作用域 可再次赋值
-    // var  全局变量 无块级作用域 可再次赋值
-    //const 有块级作用域 不可再次赋值 声明要赋值
 
     // 初始列表
     var dataList = {
