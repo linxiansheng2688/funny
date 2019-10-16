@@ -26,7 +26,7 @@ $(function(){
             }
         })
     };
-    initList();
+    // initList();
     // tab切换
 
     $tabBox.on("click",".list-itmes",function(){
