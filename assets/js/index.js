@@ -95,7 +95,7 @@ $(function () {
     });
 
     // 上拉加载
-    var nScrollHight = 0; //滚动距离总长(注意不是滚动条的长度  
+    var nScrollHight = 0; //滚动距离总长(注意不是滚动条的长度)  
     var nScrollTop = 0;   //滚动到的当前位置  
     var nDivHight = $(".ui-content").height();  
     $(".ui-content").scroll(function(){  
