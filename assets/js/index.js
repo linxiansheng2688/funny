@@ -148,7 +148,6 @@ $(function () {
         video1.pause();
     });
 
-
     //每日推荐
     // function dily(){
        
