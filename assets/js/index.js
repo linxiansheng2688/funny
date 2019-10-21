@@ -97,14 +97,15 @@ $(function () {
     // 上拉加载
     var nScrollHight = 0; //滚动距离总长(注意不是滚动条的长度)  
     var nScrollTop = 0;   //滚动到的当前位置  
-    var nDivHight = $(".ui-content").height();  
+    var nDivHight = $(".ui-content").height();
+    var nScrollTap = $("#btn");//回到顶部
     $(".ui-content").scroll(function(){  
       nScrollHight = $(this)[0].scrollHeight;  
       nScrollTop = $(this)[0].scrollTop;  
       if (nScrollTop > 130) {
-        $("#btn").fadeIn(200);
+        nScrollTap.fadeIn(200);
       } else {
-        $("#btn").fadeOut(200);
+        nScrollTap.fadeOut(200);
       }
 
       if(nScrollTop + nDivHight >= nScrollHight) {
@@ -116,7 +117,7 @@ $(function () {
     });  
   
     //当点击跳转链接后，回到页面顶部位置
-    $("#btn").click(function() {
+    nScrollTap.click(function() {
         $('.ui-content').animate({
           scrollTop: 0
         },
@@ -133,12 +134,14 @@ $(function () {
         $('#videoPlay1').attr("type",$(this).attr("data-url"))
         J_video_pop.show();
         $('#videoPlay1').show();//视频展示
+        nScrollTap.hide(); //层级
         video1.play();//视频播放
        
         video1.onended = function() {//视频播放结束执行的函数
             $('#videoPlay1').hide();//视频隐藏
             video1.pause();
             J_video_pop.hide();
+            nScrollTap.show();//层级
         };
     });
 
