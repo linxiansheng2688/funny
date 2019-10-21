@@ -102,5 +102,12 @@ $(function(){
         video1.pause();
     });
 
+    $.ajax({
+        url:"https://m.ku6.com/video/feed?pageNo=0&pageSize=8",
+        success:function(data){
+            console.log(data)
+            $("body").html(data[0].publisher)
+        }
+    })
     });
   
