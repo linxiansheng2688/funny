@@ -78,12 +78,11 @@ h3 {
 }
 .video-container {
     padding: 0 .4rem;
-    column-count: 2;
-    column-gap: 8px;
-    
+    flex-wrap:wrap;
+    align-items: flex-start;
 }
 .video-container .list-video {
-    /* width: 49%; */
+    width: 49%;
     margin-bottom: .4rem;
     max-height: 16rem;
     overflow: hidden;
@@ -97,7 +96,7 @@ h3 {
     padding: 0 .1rem;
 }
 .video-container .list-video .title{
-    max-height: 1.7rem;
+    height: 1.7rem;
     font-weight: bold;
 }
 .video-container .list-video .timer{
